@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(rgdal)\nmap = readOGR(\"mxstate.topoJSON\", \"state\")\n\nfromJSON(\"mxstate.topoJSON\")\n\nfromJSON(\"mxstate.topoJSON\")\n\n\"mxstate.topoJSON\"[[1]][2]\n\n\nlibrary(ensembleR)\n\npreds<-ensemble(iris[1:125,],iris[126:150,],'Species',c('rpart','treebag','gbm','knn','svmLinear'),'rf')\n\ntable(preds)\n\nplot(preds)\n\n",
+    "created" : 1477331043422.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "267107986",
+    "id" : "12FF2403",
+    "lastKnownWriteTime" : 3611999528623043433,
+    "last_content_update" : 1477571570184,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

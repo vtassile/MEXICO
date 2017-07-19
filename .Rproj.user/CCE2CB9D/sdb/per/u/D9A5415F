@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(\"dplyr\")\nlibrary(\"mxmaps\")\nlibrary(\"geojsonio\")\nlibrary(\"jsonlite\")\nlibrary(\"shiny\")\nlibrary(\"leaflet\")\nlibrary(\"RColorBrewer\")\nlibrary(\"lubridate\")\nlibrary(\"zoo\")\nlibrary(\"stringi\")\n\n# Download crime data\n## From crimenmexico.diegovalle.net/en/csv\n## All local crimes at the state level\ntmpdir <- tempdir()\ndownload.file(\"http://crimenmexico.diegovalle.net/data/fuero-comun-estados.csv.gz\",\n              file.path(tmpdir, \"fuero-comun-estados.csv.gz\"))\n\n\n## Load the crime data\ncrime <- read.csv(file.path(tmpdir, \"fuero-comun-estados.csv.gz\"))\n\n## Only intentional homicides\ncrime <- subset(crime, modalidad == \"HOMICIDIOS\" & tipo == \"DOLOSOS\")\n\n## subset the year from the date\ncrime$year <- as.integer(substr(crime$date, 1, 4))\n\n## Yearly homicide rates\nhom <- crime %>%\n  mutate(year = year(as.yearmon(date))) %>%\n  group_by(year, state_code, tipo, state) %>%\n  summarise(total = sum(count, na.rm = TRUE),\n            rate = total / mean(population) * 10^5) %>%\n  mutate(region = str_mxstate(state_code),\n         id = str_mxstate(state_code))\n\n# Convert the topoJSON to spatial object\ndata(mxstate.topoJSON)\ntmpdir <- tempdir()\n# have to use RJSONIO or else the topojson isn't valid\nwrite(RJSONIO::toJSON(mxstate.topoJSON), file.path(tmpdir, \"state.topojson\"))\nstates <- topojson_read(file.path(tmpdir, \"state.topojson\"))\n\n# state codes in a standard format\nstates@data$id <- str_mxstate(states@data$id)\n",
+    "created" : 1477330335223.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "2533331255",
+    "id" : "D9A5415F",
+    "lastKnownWriteTime" : 1,
+    "last_content_update" : 1477330352898,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

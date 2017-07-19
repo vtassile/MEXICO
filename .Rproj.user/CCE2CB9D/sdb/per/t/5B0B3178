@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "---\noutput:\n  html_document\n---\n<center>![ ](marca_horizontal.png)</center>\n <font size=\"8\"><center>![ ](LOGO_IOTA2.png)</center></font>\n\n\n <font size=\"6\"><center> ANÁLISIS PRESCRIPTIVO DEL COMERCIO DE MANZANA</br></center></font> \n \n <font size=\"9\"><center>MÉXICO </center> </title></center></font> \n \n <hr>\n",
+    "created" : 1478959325643.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1441922901",
+    "id" : "5B0B3178",
+    "lastKnownWriteTime" : 1478960340,
+    "last_content_update" : 1478960340942,
+    "path" : "~/Documentos/CARPETA VALENTIN/ASESORIAS/GIACINTI/2016/ANALYTICS/MEXICO ANALITIC/MEXICO/INTRO.Rmd",
+    "project_path" : "INTRO.Rmd",
+    "properties" : {
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

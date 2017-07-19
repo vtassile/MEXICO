@@ -1,0 +1,13 @@
+---
+output:
+  html_document
+---
+<center>![ ](marca_horizontal.png)</center>
+ <font size="8"><center>![ ](LOGO_IOTA2.png)</center></font>
+
+
+ <font size="6"><center> ANÁLISIS PRESCRIPTIVO DEL COMERCIO DE MANZANA</br></center></font> 
+ 
+ <font size="9"><center>MÉXICO </center> </title></center></font> 
+ 
+ <hr>
